@@ -1,0 +1,21 @@
+{
+  "name": "Telegram_Bot",
+  "version": "1.0.2",
+  "description": "Telegram Bot Running on Syrus 4G",
+  "main": "index.js",
+  "icon": "https://image.flaticon.com/icons/svg/2111/2111644.svg",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "hugo.carmona@digitalcomtech.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "node-telegram-bot-api": "^0.50.0",
+    "nodemon": "^2.0.4",
+    "request": "^2.88.2"
+  }
+}
