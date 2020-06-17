@@ -2,7 +2,13 @@
 
 Telegram Bot application running on Syrus 4 device.
 
-To get started go to the Syrus 4 Application Manager and install the Zipped file.
+To get started download or clone this repository and navigate to the Telegram_Bot folder. 
+
+Inside this folder there's a version that's zipped and ready to install. 
+
+If you develop over this repo you'll want to make sure to run the `npm install` command before compressing and installing it later on.
+
+You can go to the [Syrus 4 Application Manager](http://syrusrouter/#/apps-manager) and install the Zipped file from this directory.
 
 ![Install Telegram_Bot](img/management_tool_app_manager_telegram_install.png)
 
