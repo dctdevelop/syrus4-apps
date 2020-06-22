@@ -1,4 +1,4 @@
-# Telegram Bot Application v1.0.2
+# Telegram Bot Application v1.0.10
 
 Telegram Bot application running on Syrus 4 device.
 
