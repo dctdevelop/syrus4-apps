@@ -18,9 +18,11 @@ const options = {
   };
 const messageOpts = {parse_mode: "markdown"};
 
+
 app.listen(3000);
 app.get ("/", (req,res)=>{res.send("Syrus Bot Telegram")}) 
 
+//const bot = new TelegramBot('', {polling: true});
 const bot = new TelegramBot(TOKEN, options);
 
 bot.on('text',(msg)=>{
@@ -32,7 +34,7 @@ bot.on('text',(msg)=>{
         reply_markup: JSON.stringify({
           keyboard: [
             ['Location','System','Network'],
-            ['Inputs','Outputs',]
+            ['Inputs','Outputs','Calibrate']
           ],
           resize_keyboard:true,
           
@@ -42,18 +44,20 @@ bot.on('text',(msg)=>{
     switch (text){
 
     case ('/start'):
+        
           bot.sendMessage(msg.chat.id, 'Please Select a Command', mainKeyboardOpts);
         break;
 
     case ('location'):
         request.get(url+"/gps/position", (error, response, body) => {
             let json = JSON.parse(body);
+            //console.log(json.coords);
             let latitude = json.coords.latitude;
             let longitude = json.coords.longitude;
             let speed = json.coords.speed;
             let altitude = json.coords.altitude;
         
-        bot.sendMessage(msg.from.id, "*Syrus4G Actual Location*\nSpeed: "+speed+" km/h\nAltitude: "+altitude+" m",messageOpts);
+        bot.sendMessage(msg.from.id, "*Syrus4G Actual Location*\nSpeed: "+speed+" Km/h\nAltitude: "+altitude+" m",messageOpts);
         bot.sendLocation(msg.from.id,latitude,longitude);
         });
         break;
@@ -61,6 +65,7 @@ bot.on('text',(msg)=>{
     case ('system'):
         request.get(url+"/system-info", (error, response, body) => {
             let json = JSON.parse(body);
+            //console.log(body);
             let ramFree = json.ram.available; 
             let cpu = json.cpu.usage;
             let version = json.apexVersion;
@@ -72,6 +77,7 @@ bot.on('text',(msg)=>{
     case ('network'):
         request.get(url+"/storage/hgetall/modem_information", (error, response, body) => {
             let json = JSON.parse(body);
+            //console.log(json.coords);
             let band = json.BAND; 
             let operator = json.OPERATOR;
             let rssi = json.RSSI;
@@ -87,6 +93,7 @@ bot.on('text',(msg)=>{
     case ('inputs'):
         request.get(url+"/IO/all", (error, response, body) => {
             let json = JSON.parse(body);
+            //console.log(json.coords);
             let ign = json.IGN; if (ign===true){ign="\u2705"}else{ign="\ud83c\udd7e\ufe0f"} 
             let in1 = json.IN1; if (in1===true){in1="\u2705"}else{in1="\ud83c\udd7e\ufe0f"} 
             let in2 = json.IN2; if (in2===true){in2="\u2705"}else{in2="\ud83c\udd7e\ufe0f"} 
@@ -98,18 +105,93 @@ bot.on('text',(msg)=>{
         bot.sendMessage(msg.from.id, "*Syrus4G Inputs State*\nIgnition: "+ign+"\nInput 1: "+in1+"\nInput 2: "+in2+"\nInput 3: "+in3+"\nInput 4: "+in4+"\nInput 5: "+in5+"\nInput 6: "+in6+"\nInput 7: "+in7,messageOpts);
         });
         break;
-
-    case ('outputs'):
-        request.get(url+"/IO/all", (error, response, body) => {
-            let json = JSON.parse(body);
-            let out1 = json.OUT1; if (out1===true){ign="\u2705"}else{out1="\ud83c\udd7e\ufe0f"} 
-            let out2 = json.OUT2; if (out2===true){out2="\u2705"}else{out2="\ud83c\udd7e\ufe0f"} 
-            let out3 = json.OUT3; if (out3===true){out3="\u2705"}else{out3="\ud83c\udd7e\ufe0f"} 
-            let out4 = json.OUT4; if (out4===true){out4="\u2705"}else{out4="\ud83c\udd7e\ufe0f"} 
-        bot.sendMessage(msg.from.id, "*Syrus4G Outputs State*\nOut 1: "+out1+"\nOut 2: "+out2+"\nOut 3: "+out3+"\nOut 4: "+out4,mainKeyboardOpts);
-        });
-        break;
         
+        //case ('query'):
+        case ('outputs'):
+            request.get(url+"/IO/all", (error, response, body) => {
+                let json = JSON.parse(body);
+                //console.log(json.coords);
+                let out1 = json.OUT1; if (out1===true){ign="\u2705"}else{out1="\ud83c\udd7e\ufe0f"} 
+                let out2 = json.OUT2; if (out2===true){out2="\u2705"}else{out2="\ud83c\udd7e\ufe0f"} 
+                let out3 = json.OUT3; if (out3===true){out3="\u2705"}else{out3="\ud83c\udd7e\ufe0f"} 
+                let out4 = json.OUT4; if (out4===true){out4="\u2705"}else{out4="\ud83c\udd7e\ufe0f"} 
+            bot.sendMessage(msg.from.id, "*Syrus4G Outputs State*\nOut 1: "+out1+"\nOut 2: "+out2+"\nOut 3: "+out3+"\nOut 4: "+out4,mainKeyboardOpts);
+            });
+            break;
+
+        case ('calibrate'):
+                const outputsKeyboardOpts = {
+                    reply_to_message_id: msg.message_id,
+                    parse_mode: "markdown",
+                    reply_markup: JSON.stringify({
+                      keyboard: [
+                        ['Set'],
+                        ['Query',]
+                      ],
+                      resize_keyboard:true,
+                      one_time_keyboard:true
+                    })
+                  };
+                  bot.sendMessage(msg.chat.id, '*Accelerometer Calibration Menu*\n Do you want *Set* calibration or *Query* status?', outputsKeyboardOpts);
+                break;
+        
+        /*case ('Query'):
+            
+              bot.sendMessage(msg.chat.id, 'Please Select an Output', outputsNuumberKeyboardOpts);
+            break;*/
+        
+        case ('query'):
+              var optionsQuery = {
+                uri: url+'/exec',
+                method: 'POST',
+                headers: {'Content-Type': 'application/json','Authorization' : 'Basic c3lydXM0ZzoxMjM0NTY='},
+                form: {"command": "sudo apx-imu self_alignment"},
+                json: true
+              };
+              
+              request(optionsQuery, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                  let bodyResponse = JSON.stringify(body)
+                  //console.log(bodyResponse) //Print Body
+                  //console.log(response); //Print the Response
+                  let json = JSON.parse(bodyResponse);
+                  let accStatus =json.ALIGNMENT_CURRENT_STATE;
+                  bot.sendMessage(msg.chat.id, 'Calibration Current State: '+accStatus, mainKeyboardOpts);
+                }
+              });
+              break;
+          
+        case ('set'):
+              var optionsQuery = {
+                uri: url+'/exec',
+                method: 'POST',
+                headers: {'Content-Type': 'application/json','Authorization' : 'Basic c3lydXM0ZzoxMjM0NTY='},
+                form: {"command": "sudo apx-imu self_alignment true"},
+                json: true
+              };
+              
+              request(optionsQuery, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                  console.log(body) //Print Body
+                  bot.sendMessage(msg.chat.id, 'Starting Calibration Process', mainKeyboardOpts);
+                }
+              });
+              break;
+              /*request.post({
+                headers: {'Authorization' : 'Basic c3lydXM0ZzoxMjM0NTY='},
+                url:     url+'/exec',
+                body:    "{"command": "sudo apx-imu self_alignment"}"
+              }, function(error, response, body){
+                console.log(body);
+              });*/
+
+   
     default:  bot.sendMessage(msg.from.id, "Command Not Found")
     }
+    //bot.sendMessage(msg.from.id, `Echoing: ${msg.text}`)
 });
+
+/*request.get(url, (error, response, body) => {
+    let json = JSON.parse(body);
+    console.log(json.coords);
+  });*/

@@ -1,6 +1,6 @@
 {
   "name": "Telegram_Bot",
-  "version": "1.0.2",
+  "version": "1.0.10",
   "description": "Telegram Bot Running on Syrus 4G",
   "main": "index.js",
   "icon": "https://image.flaticon.com/icons/svg/2111/2111644.svg",
