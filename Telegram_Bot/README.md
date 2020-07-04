@@ -1,5 +1,7 @@
 # Telegram Bot Application v1.0.10
 
+![App Diagram](img/app_diagram.png)
+
 Telegram Bot application running on Syrus 4 device.
 
 To get started download or clone this repository and navigate to the Telegram_Bot folder. 
