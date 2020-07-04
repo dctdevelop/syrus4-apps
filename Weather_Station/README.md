@@ -2,7 +2,7 @@
 
 ![App Diagram](img/app_diagram.png)
 
-This application reads the device's location information and connects to Open Weather Map's weather API to read the temperature at the device's location.
+This application reads the device's location information using the [SDK](https://github.com/dctdevelop/syrus4-nodejs) and connects to Open Weather Map's weather API to read the temperature at the device's location.
 
 The app requires a file called **configuration.json** uploaded to the application's data directory. 
 
