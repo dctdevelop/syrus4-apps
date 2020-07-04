@@ -1,0 +1,22 @@
+{
+  "name": "s4mqtt",
+  "version": "1.0.10",
+  "description": "Listen ESP32 on S4 MQTT Broker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mqtt",
+    "s4",
+    "syrus",
+    "4g"
+  ],
+  "author": "Hugo Carmona",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "mqtt": "^4.1.0",
+    "syrus4-nodejs": "https://github.com/dctdevelop/syrus4-nodejs/tarball/master"
+  }
+}
