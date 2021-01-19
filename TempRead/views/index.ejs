@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syrus Temperature App</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="compass-icon"><img src="/icons/Pointer.png" width="40" height="40" alt=""></div>
+    </header>
+    <div class="temp-title">
+      <h1>Syrus Temperature</h1>
+    </div>
+
+    <div class="result">
+      <div>
+          <% for(var i=0; i<temp.length; i++) {%>
+            <% if(temp[i].connected === false)  {%>
+              <p style="color: red;">disconnected</p>
+            <% } %>
+              
+            <% if(temp[i].connected === true)  {%>
+              <p style="color: green;">connected</p>
+            <% } %>  
+            
+            <% if(temp[i].alias !== null)  {%>
+              <h1><%= temp[i].alias %></h1>
+            <% } %>
+            
+            <code><b><%= temp[i].id %></b></code>
+                
+            <% if(temp[i].value !== null)  {%>
+              <p><%= temp[i].value %>°C</p>
+            <% } %>
+            
+            <br><br>
+          <% } %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
