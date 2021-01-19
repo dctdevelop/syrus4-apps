@@ -1,0 +1,22 @@
+{
+  "name": "mqtt_mosquitto",
+  "version": "1.0.3",
+  "description": "Example for Syrus to publish messages to mosquitto's test server",
+  "main": "index.js",
+  "icon": "https://image.flaticon.com/icons/svg/2866/2866876.svg",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mqtt",
+    "temperature",
+    "gnss",
+    "gps"
+  ],
+  "author": "Leo Reynoso",
+  "license": "ISC",
+  "dependencies": {
+    "mqtt": "^4.2.6",
+    "syrus4-nodejs": "https://github.com/dctdevelop/syrus4-nodejs/tarball/master"
+  }
+}
