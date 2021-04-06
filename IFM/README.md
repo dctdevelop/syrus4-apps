@@ -2,9 +2,6 @@
 
 ![Diagram](img/header.png) ![](RackMultipart20210406-4-1rrszkp_html_2bc99914d6fe1953.gif) ![](RackMultipart20210406-4-1rrszkp_html_42850ec391a248b2.png) ![](RackMultipart20210406-4-1rrszkp_html_27f09f368d7a6938.jpg)
 
-TCP/TAIP 192.168.1.1 I/O Link
-
-ON/OFF
 
 ![](RackMultipart20210406-4-1rrszkp_html_db326ebf1afc1b6a.png)
 
@@ -16,6 +13,7 @@ All you need to do is download the &quot;Archive&quot; zip file from IFM folder 
 
 The lines to be edited are:
 
+```
 const ioLinkURL = &quot;http://192.168.1.155&quot;;
 
 and the variable &quot;options&quot;
@@ -25,11 +23,12 @@ var options = {
 &#39;method&#39;: &#39;POST&#39;,
 
 &#39;url&#39;: &#39;http://192.168.1.155&#39;,
+```
 
 After the zip file is downloaded, and you have finished editing the variable, you can upload the file to Syrus 4 using the management tool application manager
 
-![](RackMultipart20210406-4-1rrszkp_html_c2aac49c074389aa.png) ![](RackMultipart20210406-4-1rrszkp_html_d7be73512e3918f1.png)
+![App Manager](img/manager.png)
 
 Once it is installed you will be able to activate/deactivate the sensor via Pegasus output interface
 
-![](RackMultipart20210406-4-1rrszkp_html_a2fe004ce14e922c.png)
+![Interface](img/Picture4.png)
