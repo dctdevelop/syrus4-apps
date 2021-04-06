@@ -14,15 +14,16 @@ All you need to do is download the &quot;Archive&quot; zip file from IFM folder 
 The lines to be edited are:
 
 ```
-const ioLinkURL = &quot;http://192.168.1.155&quot;;
+const ioLinkURL = &quot;http://192.168.1.155&quot;
+```
 
 and the variable &quot;options&quot;
-
+```
 var options = {
 
-&#39;method&#39;: &#39;POST&#39;,
+'method': 'POST',
 
-&#39;url&#39;: &#39;http://192.168.1.155&#39;,
+'url': 'http://192.168.1.155',
 ```
 
 After the zip file is downloaded, and you have finished editing the variable, you can upload the file to Syrus 4 using the management tool application manager
