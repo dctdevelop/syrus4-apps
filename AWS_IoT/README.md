@@ -43,3 +43,13 @@ var device = awsIot.device({
 - Subscribe to `syrus4Sub`
 
 5. Create a ZIP of the application and it's files and upload it to the Syrus 4 using the [application manager](https://syrus.digitalcomtech.com/syrdocs/syrus4/manage/syrus4-ui.html#application-manager)
+
+--- 
+
+**Syrus 4 Apps Manager**
+
+![Syrus 4 Apps Manager](img/aws-iot-apps-manager.jpg)
+
+**AWS IoT**
+
+![AWS IoT](img/aws-iot-test-client.jpg)
