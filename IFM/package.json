@@ -1,0 +1,20 @@
+{
+  "name": "ioLink",
+  "version": "1.0.3",
+  "description": "Syrus 4 app to control IO Link devices",
+  "main": "index.js",
+  "icon":"https://www.ifm.com/generated-sources/images/logo-ifm.svg",
+  "minApexVersion": "20.25.00",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Digital Communications Technologies",
+  "license": "ISC"
+}
