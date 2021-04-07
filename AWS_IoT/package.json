@@ -1,0 +1,18 @@
+{
+  "name": "syrus4-aws",
+  "version": "1.0.0",
+  "description": "Send data from Syrus 4 to AWS IoT",
+  "main": "index.js",
+  "icon": "https://cdn.icon-icons.com/icons2/2407/PNG/512/aws_icon_146074.png",
+  "minApexVersion": "21.06.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hugo Carmona",
+  "license": "ISC",
+  "dependencies": {
+    "aws-iot-device-sdk": "^2.2.6",
+    "node-cron": "^3.0.0",
+    "syrus4-nodejs": "https://github.com/dctdevelop/syrus4-nodejs/tarball/master"
+  }
+}
