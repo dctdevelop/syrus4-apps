@@ -1,21 +1,39 @@
 {
-  "name": "Telegram_Bot",
-  "version": "1.0.10",
-  "description": "Telegram Bot Running on Syrus 4G",
-  "main": "index.js",
-  "icon": "https://image.flaticon.com/icons/svg/2111/2111644.svg",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "keywords": [],
-  "author": "hugo.carmona@digitalcomtech.com",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "node-telegram-bot-api": "^0.50.0",
-    "nodemon": "^2.0.4",
-    "request": "^2.88.2"
-  }
+    "name": "Telegram_Bot",
+    "version": "1.1.1",
+    "description": "Telegram Bot Running on Syrus 4G",
+    "main": "index.js",
+    "minApexVersion": "20.25.00",
+    "repository": {"url": "https://github.com/dctdevelop/syrus4-apps/tree/master/Telegram_Bot"},
+    "icon": "https://image.flaticon.com/icons/svg/2111/2111644.svg",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "schema": {
+        "type": "object",
+        "required": [
+            "token"
+        ],
+        "properties": {
+            "token": {
+                "label": "Bot Token",
+                "description": "Telegram Bot Token to connect to your Syrus 4",
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 100,
+                "fullWidth": true
+            }
+        }
+    },
+    "keywords": [],
+    "author": "hugo.carmona@digitalcomtech.com",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "fs": "0.0.1-security",
+        "node-telegram-bot-api": "^0.50.0",
+        "nodemon": "^2.0.4",
+        "request": "^2.88.2"
+    }
 }
