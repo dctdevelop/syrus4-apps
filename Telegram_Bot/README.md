@@ -10,7 +10,7 @@ Inside this folder there's a version that's zipped and ready to [install](https:
 
 If you develop over this repo you'll want to make sure to run the `npm install` command before compressing and installing it later on.
 
-From the [Syrus 4 Application Manager](http://syrusrouter/#/apps-manager) install the Zipped file from this directory.
+From the [Syrus 4 Application Manager](http://syrusrouter/#/apps-manager) install the Zipped file `Telegram_Bot.zip` from this directory.
 
 ![Add Zip](https://raw.githubusercontent.com/dctdevelop/syrus4-apps/master/Telegram_Bot/img/app_add_instance.png)
 
