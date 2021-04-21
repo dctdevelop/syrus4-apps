@@ -1,0 +1,20 @@
+{
+	"name": "myapp",
+	"version": "1.0.0",
+	"description": "My first app",
+	"main": "index.js",
+	"icon": "https://image.flaticon.com/icons/svg/2948/2948003.svg",
+	"minApexVersion": "20.25.00",
+	"repository": "https://www.github.com/path/to/app/",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"syrus4"
+	],
+	"author": "user@email.com",
+	"license": "ISC",
+	"dependencies": {
+		"request": "^2.88.2"
+	}
+}
