@@ -1,6 +1,6 @@
 # Telegram Bot Application v1.0.10
 
-![App Diagram](img/app_diagram.png)
+![App Diagram](https://raw.githubusercontent.com/dctdevelop/syrus4-apps/master/Telegram_Bot/img/app_diagram.png)
 
 Telegram Bot application running on Syrus 4 device.
 
@@ -12,9 +12,9 @@ If you develop over this repo you'll want to make sure to run the `npm install` 
 
 From the [Syrus 4 Application Manager](http://syrusrouter/#/apps-manager) install the Zipped file from this directory.
 
-![Add Zip](img/app_add_instance.png)
+![Add Zip](https://raw.githubusercontent.com/dctdevelop/syrus4-apps/master/Telegram_Bot/img/app_add_instance.png)
 
-![Install Instance](img/app_install.png)
+![Install Instance](https://raw.githubusercontent.com/dctdevelop/syrus4-apps/master/Telegram_Bot/img/app_install.png)
 
 Next, download and install [Telegram Application](https://telegram.org/) on your phone or desktop and create an account.
 
@@ -30,20 +30,20 @@ Talk to the @BotFather and give him the following commands
 
 Once you're done, the @BotFather will grant a unique token for you.
 
-![BotFather](img/telegram_syrus4_app_setup.png)
+![BotFather](https://raw.githubusercontent.com/dctdevelop/syrus4-apps/master/Telegram_Bot/img/telegram_syrus4_app_setup.png)
 
 You can enter this token in the UI under 
 
-![BotFather](img/bot_token.png)
+![BotFather](https://raw.githubusercontent.com/dctdevelop/syrus4-apps/master/Telegram_Bot/img/bot_token.png)
 
 Once you click SAVE go back to the **INFORMATION** tab and click on **START** at the bottom.
 
 Now go back to telegram and search for the Bot Name you just created (Syrus4Bot in our screenshot)
 
-![Telegram Search Bot](img/telegram_syrus4_app_find_bot.png)
+![Telegram Search Bot](https://raw.githubusercontent.com/dctdevelop/syrus4-apps/master/Telegram_Bot/img/telegram_syrus4_app_find_bot.png)
 
 Add the bot on telegram and you're ready to interact remotely with your Syrus via Telegram.
 
-![Telegram Syrus 4 Running](img/telegram_syrus4_app_running.png)
+![Telegram Syrus 4 Running](https://raw.githubusercontent.com/dctdevelop/syrus4-apps/master/Telegram_Bot/img/telegram_syrus4_app_running.png)
 
-![Telegram Syrus 4 Running on Phone](img/telegram_syrus4_app_running_phone.jpeg)
+![Telegram Syrus 4 Running on Phone](https://raw.githubusercontent.com/dctdevelop/syrus4-apps/master/Telegram_Bot/img/telegram_syrus4_app_running_phone.jpeg)
