@@ -1,0 +1,16 @@
+{
+    "name": "myapp-sdk",
+    "version": "1.0.0",
+    "description": "Sample app running with Syrus4 SDK",
+    "main": "index.js",
+    "icon": "https://image.flaticon.com/icons/svg/2920/2920277.svg",
+    "minApexVersion": "20.25.00",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "user@email.com",
+    "license": "ISC",
+    "dependencies": {
+        "syrus4-nodejs": "https://github.com/dctdevelop/syrus4-nodejs/tarball/master"
+    }
+}
