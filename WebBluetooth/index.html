@@ -1,0 +1,49 @@
+<html>
+<h1>Web Bluetooth Sample</h1>
+<button id="scan">Scan and Pair</button>
+<button id="list_services_characteristics">List Services & Characteristics</button>
+<script>
+	var button = document.querySelector('#scan');
+	button.addEventListener('click', function () {
+		navigator.bluetooth.requestDevice({
+			filters: [{
+				namePrefix: 'Syrus 4 BT'
+			}]
+		}).then(device => {
+			console.log('Got device:', device.name);
+			console.log('id:', device.id);
+		});
+	});
+
+	var button = document.querySelector('#list_services_characteristics');
+	button.addEventListener('click', function () {
+		navigator.bluetooth.requestDevice({
+				filters: [{
+					namePrefix: 'Syrus 4 BT'
+				}]
+				// optionalServices: ["00000000-dc70-0080-dc70-a07ba85ee4d6"]
+			}).then(device => {
+				return device.gatt.connect();
+			}).then(server => {
+				console.log('Services')
+				return server.getPrimaryServices();
+			}).then(services => {
+				let queue = Promise.resolve();
+				services.forEach(service => {
+					queue = queue.then(_ => service.getCharacteristics().then(characteristics => {
+						console.log('> Service: ' + service.uuid);
+						characteristics.forEach(characteristic => {
+							console.log('>> Characteristic: ' + characteristic.uuid);
+						});
+					}));
+				});
+				return queue;
+
+			})
+			.catch(error => {
+				console.error(error);
+			});
+	});
+</script>
+
+</html>
