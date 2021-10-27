@@ -1,9 +1,9 @@
 {
     "name": "Telegram_Bot",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Telegram Bot Running on Syrus 4G",
     "main": "index.js",
-    "minApexVersion": "20.25.00",
+    "minApexVersion": "21.40.1",
     "repository": {"url": "https://github.com/dctdevelop/syrus4-apps/tree/master/Telegram_Bot"},
     "icon": "https://image.flaticon.com/icons/svg/2111/2111644.svg",
     "scripts": {
