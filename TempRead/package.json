@@ -1,9 +1,10 @@
 {
   "name": "syrustemp",
   "version": "1.0.11",
+  "minApexVersion": "21.40.1",
   "description": "Syrus Temperature Reader",
   "main": "app.js",
-  "icon": "https://image.flaticon.com/icons/svg/2622/2622386.svg",
+  "icon": "https://static.vecteezy.com/system/resources/thumbnails/000/442/462/small/9__286_29.jpg",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
